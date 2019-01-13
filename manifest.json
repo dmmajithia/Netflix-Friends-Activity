@@ -8,18 +8,8 @@
     "http://www.netflix.com/",
     "tabs"
   ],
-  "background": {
-    "scripts" : ["background.js"],
-    "persistent": false
-  },
-  "content_scripts": [
-    {
-      "matches": ["http://*.netflix.com/*", "https://*.netflix.com/*"],
-      "js": ["readActivity.js"]
-    }
-  ],
   "page_action": {
     "default_title": "Netflix Friends Activity",
     "default_popup": "popup.html"
-  },
+  }
 }
