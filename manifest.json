@@ -4,11 +4,9 @@
   "version": "1.0.0.1",
   "description": "This extension allows you to see what your facebook friends have last watched in Netflix!",
   "permissions": [
-    "https://www.netflix.com/",
-    "http://www.netflix.com/",
     "tabs"
   ],
-  "page_action": {
+  "browser_action": {
     "default_title": "Netflix Friends Activity",
     "default_popup": "popup.html"
   }
