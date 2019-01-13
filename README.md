@@ -4,7 +4,7 @@ This is a chrome extension that is still in process. The extension will allow yo
 
 ## Documentation
 
-### htdocs
+### httdocs
 
 All of the server side files are located here.
 
