@@ -6,8 +6,8 @@
 require_once 'functions.php';
 
 $fb = new Facebook\Facebook([
-  'app_id' => '2196118380706308', // Replace {app-id} with your app id
-  'app_secret' => '45e8d6c72c0b8d59543bb7b5b519679c',
+  'app_id' => $app_id, // Replace {app-id} with your app id
+  'app_secret' => $app_secret,
   'default_graph_version' => 'v2.2',
   ]);
 
