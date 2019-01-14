@@ -40,7 +40,7 @@ if (! isset($accessToken)) {
 echo '<h3>Access Token</h3>';
 var_dump($accessToken->getValue());
 
-echo '<script type="text/javascript">chrome.tabs.sendMessage(0, {accessToken: "'. $accessToken->getValue() .'"}, );</script>'
+echo '<script type="text/javascript">chrome.tabs.sendMessage(0, {accessToken: "'. $accessToken->getValue() .'"}, {});</script>'
 //echo "hello";
 
 
