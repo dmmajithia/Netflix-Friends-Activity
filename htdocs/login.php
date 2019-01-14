@@ -14,7 +14,7 @@ $fb = new Facebook\Facebook([
 $helper = $fb->getRedirectLoginHelper();
 
 $permissions = ['email']; // Optional permissions
-$loginUrl = $helper->getLoginUrl('https://54.186.219.119/fb-callback.php', $permissions);
+$loginUrl = $helper->getLoginUrl(urlencode('https://54.186.219.119/fb-callback.php?extensionID='.$_GET["extensionID"]), $permissions);
 
 echo '<script type="text/javascript">window.location.replace(\''. $loginUrl . '\');</script>';
 
