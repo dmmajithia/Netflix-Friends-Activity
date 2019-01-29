@@ -1,23 +1,20 @@
-document.getElementById("fblogin").addEventListener("click", FBLoginAction);
+initializeProgram();
 
+function initializeProgram(){
+	var facebookLoginDiv = document.getElementById("FacebookLoginDiv");
+	var friendsFeedDiv = document.getElementById("FriendsFeedDiv");
 
-chrome.storage.sync.get("accessToken", function(items){
-	document.getElementById("location").innerHTML = items.accessToken;
-});
+	facebookLoginDiv.style.display = "none";
+	friendsFeedDiv.style.display = "none";
 
-function FBLoginAction(){
-	window.open('https://54.186.219.119/login.php?extensionID=' + chrome.runtime.id);
+	userIDCheck();
 }
 
-chrome.runtime.onMessage.addListener(
-
-	function(request, sender, sendResponse) {
-		chrome.storage.sync.set({"accessToken": request.accessToken}, function(){
-			
-			console.log(request.accessToken);
-			alert(request.accessToken);
-		});
-	}
-);
+function userIDCheck(){
+	chrome.identity.getProfileUserInfo(function(userInfo) {
+	  document.getElementById("temp1").innerHTML = JSON.stringify(userInfo);
+	});
+}
 
 
+//chrome.storage.sync.get("accessToken", function(items){});
