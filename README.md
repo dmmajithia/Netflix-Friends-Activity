@@ -12,4 +12,9 @@ Use composer to keep track of PHP libraries. The command run on terminal from ht
 ```
 composer require library-name
 ```
+
 To import composer libraries, require functions.php .
+
+### Issues Jan. 27th
+
+Chrome.identity.userInfo displaying empty JSON object: {"email":"","id":""}.
