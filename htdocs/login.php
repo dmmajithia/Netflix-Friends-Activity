@@ -15,8 +15,8 @@ $helper = $fb->getRedirectLoginHelper();
 
 $permissions = ['email']; // Optional permissions
 $loginUrl = $helper->getLoginUrl('https://54.186.219.119/fb-callback.php', $permissions);
-
-$_SESSION["extensionID"] = $_GET["extensionID"];
+//this lets user view the facebook login page, and the fb-callback.php is the redirect uri
+$_SESSION["extensionID"] = $_GET["extensionID"]; //potential problem
 
 echo '<script type="text/javascript">window.location.replace(\''. $loginUrl . '\');</script>';
 
