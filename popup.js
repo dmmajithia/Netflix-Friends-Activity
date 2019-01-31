@@ -15,6 +15,3 @@ function userIDCheck(){
 	  document.getElementById("temp1").innerHTML = JSON.stringify(userInfo);
 	});
 }
-
-
-//chrome.storage.sync.get("accessToken", function(items){});
