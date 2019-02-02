@@ -20,12 +20,14 @@ function userIDCheck(){
 				console.log("user exists in chrome.storage");
 			}
 			else {
+				document.getElementById("fbLoginButton").addEventListener("click", FBLoginAction);
 				facebookLoginDiv.style.display = "block";
 				console.log("user doesn't exist in chrome.storage");
-				// chrome.storage.sync.set({userIDs:{userInfo.id:{}}}, function(){
-				//  	console.log("Added the userIDs dictionary");
-				// });
 			}
 		});
 	});
+}
+
+function FBLoginAction(){
+	window.open('https://54.186.219.119/login.php');
 }
