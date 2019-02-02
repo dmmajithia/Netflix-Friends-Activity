@@ -40,7 +40,6 @@ if (! isset($accessToken)) {
 echo '<h3>Access Token</h3>';
 var_dump($accessToken->getValue());
 
-echo '<script type="text/javascript">chrome.runtime.sendMessage("'.$_SESSION["extensionID"].'", {accessToken: "'. $accessToken->getValue() .'"}, null);</script>'
 //echo "hello";
 
 
