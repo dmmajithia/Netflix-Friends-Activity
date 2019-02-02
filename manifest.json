@@ -6,10 +6,15 @@
   "permissions": [
     "tabs",
     "storage",
-    "identity"
+    "identity",
+    "identity.email"
   ],
   "browser_action": {
     "default_title": "Netflix Friends Activity",
     "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
   }
 }
