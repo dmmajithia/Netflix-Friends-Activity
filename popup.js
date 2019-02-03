@@ -29,7 +29,9 @@ function chromeIDCheck(){
 					else{
 						console.log("user NOT found in database");
 						//invoke facebook login
-						document.getElementById("fbLoginButton").addEventListener("click", FBLoginAction);
+						document.getElementById("fbLoginButton").addEventListener("click", function(){
+							FBLoginAction(userInfo.id);
+						});
 						facebookLoginDiv.style.display = "block";
 					}
 				});
@@ -48,6 +50,6 @@ function chromeIDCheckApi(chromeID, callback){
 	});
 }
 
-function FBLoginAction(){
-	window.open('https://54.186.219.119/login.php');
+function FBLoginAction(chromeID){
+	window.open('https://54.186.219.119/login.php?chromeID=' + chromeID);
 }

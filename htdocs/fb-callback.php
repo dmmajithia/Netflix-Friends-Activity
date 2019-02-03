@@ -2,14 +2,8 @@
 
 require_once 'functions.php';
 
-$fb = new Facebook\Facebook([
-  'app_id' => $app_id, // Replace {app-id} with your app id
-  'app_secret' => $app_secret,
-  'default_graph_version' => 'v2.2',
-  ]);
-
+$fb = initFB();
 $helper = $fb->getRedirectLoginHelper();
-
 try {
   $accessToken = $helper->getAccessToken();
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -37,7 +31,7 @@ if (! isset($accessToken)) {
 }
 
 // Logged in
-echo '<h3>Access Token</h3>';
+echo '<h3>Successfully logged in!</h3>';
 var_dump($accessToken->getValue());
 
 //echo "hello";

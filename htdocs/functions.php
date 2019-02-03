@@ -1,14 +1,5 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php'; // loads required SDKs from Composer. CMD(composer require facebook/graph-sdk)
-require_once 'constants.php';
-if(!session_id()) {
-    session_start();
-}
-header('Access-Control-Allow-Origin: *');
-
-header('Access-Control-Allow-Methods: GET, POST');
-
-header("Access-Control-Allow-Headers: X-Requested-With");
+require_once 'utilities.php';
 
 function checkChromeID($chromeID){
 	$conn = initDatabase();
@@ -29,29 +20,9 @@ function checkChromeID($chromeID){
 	respond($user);
 }
 
-function initDatabase(){ //returns $conn from 'mysqli_connect()''
-	$servername = "localhost";
-	$username = "root";
-	$password = "grzvE3zXstWz";
-	$database = 'netflix_database';
-
-	// Create connection
-	//echo "about to create connection\n";
-	$conn = mysqli_connect($servername, $username, $password, $database);
-	return $conn;
+function createUser($chromeID, $facebookID, $fbAccessToken){
+	
 }
-
-function respond($value = {}){ //send back response to API caller
-	$response = array(
-			'type' => 'message',
-			'value' => $value
-	);
-	$response['request'] = json_decode(stripslashes($_REQUEST['json']), true);
-	$encoded = json_encode($response);
-	header('Conntent-type: application/json');
-	exit($encoded);
-}
-
 /*
 constants.php contains - 
 	$app_id,
