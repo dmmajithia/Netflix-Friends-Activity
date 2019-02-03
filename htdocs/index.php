@@ -1,6 +1,6 @@
 <?php
 //index.php
-
+require_once 'functions.php';
 if(isSet($_GET['action'])){
 	$action = $_GET['action'];
 	switch ($action) {
@@ -20,8 +20,6 @@ if(isSet($_GET['action'])){
 				$user['found'] = false; //assuming user not found
 				while($row = mysqli_fetch_assoc($result)){
 					//we found a user
-					echo "hello!";
-					//$user = $result->fetch_assoc();
 					$user['found'] = true;
 					$user['Name'] = $row['Name'];
 					$user['FacebookID'] = $row['FacebookID'];

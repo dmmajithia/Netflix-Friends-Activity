@@ -20,10 +20,30 @@ function userIDCheck(){
 				console.log("user exists in chrome.storage");
 			}
 			else {
-				document.getElementById("fbLoginButton").addEventListener("click", FBLoginAction);
-				facebookLoginDiv.style.display = "block";
 				console.log("user doesn't exist in chrome.storage");
+				userIDCheckApi(userInfo.id, function(response){
+					if(response.found){
+						console.log("user found in database");
+						//get the friends feed from database
+					}
+					else{
+						console.log("user NOT found in database");
+						//invoke facebook login
+						document.getElementById("fbLoginButton").addEventListener("click", FBLoginAction);
+						facebookLoginDiv.style.display = "block";
+					}
+				});
 			}
+		});
+	});
+}
+
+function userIDCheckApi(chromeID, callback){
+	const Url = "https://54.186.219.119?action=checkChromeID&chromeID=" + chromeID;
+	fetch(Url, {method: "GET"})
+	.then(function(data){
+		data.json().then(function(json){
+			callback(json.value);
 		});
 	});
 }
